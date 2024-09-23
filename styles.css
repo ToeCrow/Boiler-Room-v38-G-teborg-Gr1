@@ -13,29 +13,149 @@ nav {
 
 }
 
-main {
+body {
+ <<<<<<< HEAD
+     font-family: 'Arial', sans-serif;
+     margin: 0;
+     padding: 0;
+     background-color: #F4F4F4;
+     color: #333;
+     line-height: 1.6;
+   }
+   header {
+     background-color: #333;
+     color: white;
+     padding: 1rem;
+   }
+   nav ul {
+     display: flex;
+     justify-content: center;
+     list-style: none;
+     padding: 0;
+   }
+   nav ul li {
+     margin: 0 1rem;
+   }
+   nav ul li a {
+     color: white;
+     text-decoration: none;
+     font-size: 1.2rem;
+   }
+   .hero {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     background-color: #555;
+     color: white;
+     text-align: center;
+     padding: 5rem 1rem;
+   }
+   .hero h1 {
+     font-size: 2.5rem;
+     margin: 0;
+   }
+   .hero p {
+     font-size: 1.5rem;
+     margin-top: 1rem;
+   }
+   .grid-section {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 20px;
+     padding: 2rem;
+     background-color: #fff;
+   }
+   .about-text {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+   }
+   .services-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+     gap: 20px;
+     padding: 2rem;
+     background-color: #F4F4F4;
+   }
+   .services-grid article {
+     background-color: white;
+     padding: 20px;
+     border-radius: 10px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     text-align: center;
+   }
+   .services-grid article h3 {
+     margin-top: 0;
+   }
+   footer {
+     background-color: #333;
+     color: white;
+     text-align: center;
+     padding: 1rem;
+     font-size: 0.9rem;
+   }
+   @media only screen and (max-width: 600px) {
+     .hero h1 {
+       font-size: 2rem;
+     }
+     .hero p {
+       font-size: 1.2rem;
+     }
+     .grid-section {
+       grid-template-columns: 1fr;
+     }
+     .services-grid {
+       grid-template-columns: 1fr;
+     }
+   }
+   @media only screen and (max-width: 768px) {
+     .hero h1 {
+       font-size: 2.2rem;
+     }
+     .grid-section {
+       grid-template-columns: 1fr;
+     }
+   }
+   @media only screen and (min-width: 1200px) {
+     .hero h1 {
+       font-size: 3rem;
+     }
+     .services-grid {
+       grid-template-columns: repeat(3, 1fr);
+     }
 
+main {
+ display: grid;
+ grid-template-areas:
+ "header" "header" 
+ "aside" "section" 
+ "aside" "section" ;
 }
 
-h2 {
-
+.header {
+ grid-area: header;
 }
 
 aside {
-
+ width: 100px;
+ display: flex;
+ flex-direction: column;
+ grid-area: aside;
 }
 
 footer {
     
 }
 
-/* Kontakt sidan */
+Kontakt sidan
 .sec-contact {
  display: grid;
  grid-template-columns: 1fr;
  grid-template-rows: auto;
  gap: 20px;
  padding: 20px;
+ grid-area: section;
 }
 
 .header{
@@ -59,7 +179,7 @@ footer {
 
 .contact-card:hover {
  transform: scale(1.05);
- box-shadow: 3px 3px 5px black;
+ box-shadow: 3px 3px 5px #333;
 }
 
 .profile-image {
@@ -93,7 +213,7 @@ footer {
  text-decoration: underline;
 }
 
-@media (min-width:481px) and (max-width:1024px){
+@media (min-width:481px) and (max-width:759px){
 
 .sec-contact {
  display: grid;
@@ -104,7 +224,15 @@ footer {
 }
 }
 
-@media (min-width:1025px) {
+@media (min-width:760px) {
+
+ main {
+  display: grid;
+  grid-template-areas:
+  "header" "header" 
+  "aside" "section" ;
+  /* "aside" "section" "section"; */
+ }
 
 .sec-contact {
  display: grid;
