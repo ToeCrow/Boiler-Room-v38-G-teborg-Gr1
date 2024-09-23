@@ -1,27 +1,55 @@
 body {
 
+ font-family: 'Arial', sans-serif;
+ margin: 0;
+ padding: 0;
+ background-color: #F4F4F4;
+ color: #333;
+ line-height: 1.6;
 }
-header {
-
-}
-
 h1 {
-
+ text-align: center;
 }
 
-nav {
-
+footer {
+ position: fixed;
+ bottom: 0;
+ width: 100%;
 }
 
-body {
- <<<<<<< HEAD
-     font-family: 'Arial', sans-serif;
-     margin: 0;
-     padding: 0;
-     background-color: #F4F4F4;
-     color: #333;
-     line-height: 1.6;
-   }
+nav a:hover {
+ color: yellow;
+ background-color: black;
+}
+
+
+h2 {
+ margin: 1.5rem 0;
+ text-align: center;
+}
+
+.sec-menu {
+ gap: 2rem;
+ padding: 1rem;
+}
+.header-menu {
+ /* grid-template-columns: 1fr; */
+}
+figure {
+ background-color: #F9F9F9;
+ padding: 1rem;
+ border-radius: 10px;
+ margin: 0;
+ 
+}
+figure img {
+ max-width: 100%;
+ height: 7rem;
+ border-radius: 8px;
+}
+
+
+
    header {
      background-color: #333;
      color: white;
@@ -61,15 +89,15 @@ body {
    }
    .grid-section {
      display: grid;
-     grid-template-columns: 1fr 1fr;
+     grid-template-columns: 1fr;
      gap: 20px;
-     padding: 2rem;
+     padding: 2rem ;
      background-color: #fff;
    }
    .about-text {
      display: flex;
      flex-direction: column;
-     justify-content: center;
+     align-self: center;
    }
    .services-grid {
      display: grid;
@@ -95,43 +123,16 @@ body {
      padding: 1rem;
      font-size: 0.9rem;
    }
-   @media only screen and (max-width: 600px) {
-     .hero h1 {
-       font-size: 2rem;
-     }
-     .hero p {
-       font-size: 1.2rem;
-     }
-     .grid-section {
-       grid-template-columns: 1fr;
-     }
-     .services-grid {
-       grid-template-columns: 1fr;
-     }
-   }
-   @media only screen and (max-width: 768px) {
-     .hero h1 {
-       font-size: 2.2rem;
-     }
-     .grid-section {
-       grid-template-columns: 1fr;
-     }
-   }
-   @media only screen and (min-width: 1200px) {
-     .hero h1 {
-       font-size: 3rem;
-     }
-     .services-grid {
-       grid-template-columns: repeat(3, 1fr);
-     }
-
+  
 main {
  display: grid;
+ grid-template-columns: 1fr 5fr; /* Asides smaller than section */
  grid-template-areas:
- "header" "header" 
- "aside" "section" 
- "aside" "section" ;
+   "header" 
+    "section"
+    "aside";
 }
+
 
 .header {
  grid-area: header;
@@ -144,11 +145,9 @@ aside {
  grid-area: aside;
 }
 
-footer {
-    
-}
 
-Kontakt sidan
+/* Kontakt sidan */
+.sec-menu,
 .sec-contact {
  display: grid;
  grid-template-columns: 1fr;
@@ -215,6 +214,14 @@ Kontakt sidan
 
 @media (min-width:481px) and (max-width:759px){
 
+ main {
+  display: grid;
+  grid-template-columns: 1fr 5fr; /* Asides smaller than section */
+  grid-template-areas:
+    "header header"
+    "aside section";
+ }
+.sec-menu,
 .sec-contact {
  display: grid;
  grid-template-columns: repeat(2, 1fr);
@@ -222,18 +229,44 @@ Kontakt sidan
  gap: 20px;
  padding: 20px;
 }
+.hero h1 {
+ font-size: 2.2rem;
 }
+.grid-section {
+ grid-template-columns: 1fr;
+ display: grid;
+ gap: 20px;
+ padding: 2rem 5rem;
+ background-color: #fff;
+}
+}
+
 
 @media (min-width:760px) {
 
  main {
   display: grid;
+  grid-template-columns: 1fr 5fr; /* Asides smaller than section */
   grid-template-areas:
-  "header" "header" 
-  "aside" "section" ;
-  /* "aside" "section" "section"; */
+    "header header"
+    "aside section";
  }
 
+ .hero h1 {
+  font-size: 3rem;
+}
+.services-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid-section {
+ display: grid;
+ grid-template-columns: 1fr;
+ gap: 20px;
+ padding: 2rem 10rem;
+ background-color: #fff;
+}
+
+.sec-menu,
 .sec-contact {
  display: grid;
  grid-template-columns: repeat(3, 1fr);
@@ -242,3 +275,34 @@ Kontakt sidan
  padding: 20px;
 }
 }
+@media only screen and (max-width: 480px) {
+ .hero h1 {
+   font-size: 2rem;
+ }
+ .hero p {
+   font-size: 1.2rem;
+ }
+ .grid-section {
+   grid-template-columns: 1fr;
+ }
+ .services-grid {
+   grid-template-columns: 1fr;
+ }
+}
+
+@media only screen and (min-width: 1200px) {
+ /* .hero h1 {
+   font-size: 3rem;
+ }
+ .services-grid {
+   grid-template-columns: repeat(3, 1fr);
+ }
+ .grid-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 2rem 10rem;
+  background-color: #fff;
+} */
+}
+
